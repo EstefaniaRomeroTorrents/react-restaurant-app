@@ -1,3 +1,11 @@
 .imgSlider {
   width: 100%;
 }
+.img-responsive {
+  max-inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 2.6;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}

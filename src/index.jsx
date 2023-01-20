@@ -1,14 +1,29 @@
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/home/Home";
 import reportWebVitals from "./reportWebVitals";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#0a95ff",
+    },
+    navbar: {
+      main: "#ffffff",
+    },
+  },
+});
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

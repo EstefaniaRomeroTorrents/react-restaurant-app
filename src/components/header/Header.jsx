@@ -16,9 +16,23 @@ import Toolbar from "@mui/material/Toolbar";
 
 import Button from "@mui/material/Button";
 import logo from "../../assets/logo.png";
+import { useScrollTrigger } from "@mui/material";
+import { Container } from "@mui/system";
 
 const drawerWidth = 240;
 const navItems = ["La carte", "Le restaurant", "Contact", "News"];
+function ShrinkScroll(props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 62,
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement(children, {
+    className: trigger ? "no-shrink" : "shrink",
+  });
+}
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -50,27 +64,31 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <img className="logo" src={logo} alt="Logo" />
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <ShrinkScroll {...props}>
+        <AppBar color="navbar" component="nav">
+          <Container maxWidth="lg">
+            <Toolbar sx={{ justifyContent: "space-between" }}>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <img className="logo" src={logo} alt="Logo" />
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                {navItems.map((item) => (
+                  <Button key={item} sx={{ color: "#000" }}>
+                    {item}
+                  </Button>
+                ))}
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </ShrinkScroll>
       <Box component="nav">
         <Drawer
           container={container}

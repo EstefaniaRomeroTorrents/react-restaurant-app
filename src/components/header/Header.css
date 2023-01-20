@@ -1,3 +1,11 @@
 .logo {
   width: 150px;
 }
+.shrink {
+  padding: 30px 0;
+  transition: 0.2s !important;
+}
+.no-shrink {
+  padding: 0;
+  transition: 0.4s !important;
+}

@@ -29,6 +29,13 @@ function Slider() {
 
   return (
     <Carousel
+      animation="slide"
+      changeOnFirstRender={false}
+      cycleNavigation={true}
+      fullHeightHover={true}
+      autoPlay={false}
+      duration={500}
+      navButtonsAlwaysVisible
       indicatorContainerProps={{
         style: {
           bottom: "20px",
