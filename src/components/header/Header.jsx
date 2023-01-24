@@ -65,7 +65,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <ShrinkScroll {...props}>
-        <AppBar color="navbar" component="nav">
+        <AppBar color="secondary" enableColorOnDark="true" component="nav">
           <Container maxWidth="lg">
             <Toolbar sx={{ justifyContent: "space-between" }}>
               <IconButton
@@ -80,7 +80,7 @@ function DrawerAppBar(props) {
               <img className="logo" src={logo} alt="Logo" />
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
                 {navItems.map((item) => (
-                  <Button key={item} sx={{ color: "#000" }}>
+                  <Button key={item} color="inherit">
                     {item}
                   </Button>
                 ))}
