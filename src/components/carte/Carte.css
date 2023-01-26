@@ -1,13 +1,12 @@
 .fish-carte {
-  position: absolute;
+  position: relative;
   width: 100%;
-  /*height: 100%;*/
   z-index: 0;
-  /* margin-top: 100px;*/
   top: 10px;
   text-align: center;
   line-height: 80px;
   justify-content: center;
+  padding-bottom: 30px;
 
   padding-top: 20px;
 }
@@ -34,4 +33,52 @@
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.5px;
+}
+.fish {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.fish-1 {
+  width: 300px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  transform: translate(-20%, -10%);
+}
+.fish-2 {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -10%);
+}
+.fish-3 {
+  width: 300px;
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  transform: translate(-70%, -10%);
+}
+.fish-4 {
+  width: 332px;
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  transform: translate(-90%, -10%);
+}
+.fish-5 {
+  width: 300px;
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  transform: translate(-100%, -10%);
+}
+.fish-6 {
+  width: 300px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-10%, -10%);
 }

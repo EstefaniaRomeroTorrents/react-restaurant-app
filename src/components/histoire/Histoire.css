@@ -1,0 +1,5 @@
+.img-container {
+  display: table-cell;
+  vertical-align: middle;
+  height: 380px;
+}
