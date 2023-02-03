@@ -2,20 +2,18 @@ import { Box } from "@mui/system";
 import Button from "@mui/material/Button";
 
 import "./Footer.css";
-import { ButtonGroup, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
+import { ThemeContext } from "../..";
 
 function Footer() {
   return (
     <Box>
       <Grid container direction="row" justifyContent="center">
-        <ButtonGroup
-          disableElevation
-          variant="contained"
-          aria-label="Disabled elevation buttons"
-        >
-          <Button>Light</Button>
-          <Button>Dark</Button>
-        </ButtonGroup>
+        <ThemeContext.Consumer>
+          {({ theme, changeTheme }) => (
+            <Button onClick={changeTheme}>{theme}</Button>
+          )}
+        </ThemeContext.Consumer>
       </Grid>
     </Box>
   );

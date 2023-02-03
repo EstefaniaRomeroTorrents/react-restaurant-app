@@ -1,12 +1,59 @@
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/home/Home";
 import reportWebVitals from "./reportWebVitals";
 
-const themeDark = createTheme({
+const DEFAULT_THEME = "light";
+
+const getDesignPalette = (mode) => ({
+  palette: {
+    mode,
+    ...(mode === DEFAULT_THEME
+      ? {
+          primary: {
+            main: "#0a95ff",
+          },
+          secondary: {
+            main: "#ffffff",
+          },
+        }
+      : {
+          primary: {
+            main: "#0a95ff",
+          },
+          secondary: {
+            main: "#000000",
+          },
+        }),
+  },
+});
+
+export const ThemeContext = createContext({
+  theme: DEFAULT_THEME,
+  changeTheme: () => {},
+});
+
+function App() {
+  const [theme, setTheme] = useState(DEFAULT_THEME);
+  const changeTheme = () =>
+    setTheme(theme === DEFAULT_THEME ? "dark" : DEFAULT_THEME);
+
+  return (
+    <>
+      <ThemeContext.Provider value={{ changeTheme, theme }}>
+        <ThemeProvider theme={createTheme(getDesignPalette(theme))}>
+          <Home />
+        </ThemeProvider>
+      </ThemeContext.Provider>
+    </>
+  );
+}
+
+/*const themeDark = createTheme({
   palette: {
     mode: "dark",
     primary: {
@@ -27,15 +74,13 @@ const themeLight = createTheme({
       main: "#ffffff",
     },
   },
-});
+});*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ThemeProvider theme={themeLight}>
-    <React.StrictMode>
-      <Home />
-    </React.StrictMode>
-  </ThemeProvider>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

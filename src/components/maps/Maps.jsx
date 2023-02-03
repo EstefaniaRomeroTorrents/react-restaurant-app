@@ -9,9 +9,9 @@ function Maps() {
         width="100%"
         height="500"
         style={{ border: "none" }}
-        allowfullscreen=""
+        allowFullScreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
         title="mapa"
       ></iframe>
     </Box>
