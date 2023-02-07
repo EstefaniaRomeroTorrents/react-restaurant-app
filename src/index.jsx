@@ -1,5 +1,4 @@
-import { ThemeProvider } from "@emotion/react";
-import { createTheme } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
 import React, { useState } from "react";
 import { createContext } from "react";
 import ReactDOM from "react-dom/client";
@@ -44,7 +43,7 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ changeTheme, theme }}>
+      <ThemeContext.Provider value={{ theme, changeTheme }}>
         <ThemeProvider theme={createTheme(getDesignPalette(theme))}>
           <Home />
         </ThemeProvider>

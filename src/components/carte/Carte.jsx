@@ -1,5 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { Container } from "@mui/system";
+import { Grid, Typography } from "@mui/material";
+import { Container, Box } from "@mui/system";
 
 import EuroOutlinedIcon from "@mui/icons-material/EuroOutlined";
 import "./Carte.css";
@@ -32,7 +32,12 @@ function Carte() {
               paddingBottom="30px"
               paddingTop="30px"
             >
-              <div className="menuMer">
+              <Box
+                className="menuMer"
+                sx={{
+                  backgroundColor: "secondary.main",
+                }}
+              >
                 <Typography variant="h3">Menú de la Mer</Typography>
                 <Typography variant="h5" className="menuh5">
                   SERVI SEULEMENT AU DÉJEÛNER
@@ -54,7 +59,7 @@ function Carte() {
                     </p>
                   </div>
                 </Grid>
-              </div>
+              </Box>
             </Grid>
           </Grid>
           <Grid
@@ -66,7 +71,12 @@ function Carte() {
             textAlign="left"
           >
             <Grid item={true} xs={10} md={8} lg={4}>
-              <div className="menuMer">
+              <Box
+                className="menuMer"
+                sx={{
+                  backgroundColor: "secondary.main",
+                }}
+              >
                 <Typography variant="h6">Poissons crus</Typography>
 
                 <Grid item={true} xs={10} md={8} lg={12}>
@@ -85,10 +95,15 @@ function Carte() {
                     <p>Bar cru 25€</p>
                   </div>
                 </Grid>
-              </div>
+              </Box>
             </Grid>
             <Grid item={true} xs={10} md={8} lg={6}>
-              <div className="menuMer">
+              <Box
+                className="menuMer"
+                sx={{
+                  backgroundColor: "secondary.main",
+                }}
+              >
                 <Typography variant="h2">Les entrées</Typography>
                 <Typography variant="h6">Poissons</Typography>
 
@@ -120,7 +135,7 @@ function Carte() {
                     <p>Langoustines mayonnaise 60€</p>
                   </div>
                 </Grid>
-              </div>
+              </Box>
             </Grid>
           </Grid>
         </Box>

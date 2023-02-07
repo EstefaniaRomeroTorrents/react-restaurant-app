@@ -15,9 +15,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 
 import Button from "@mui/material/Button";
-import logo from "../../assets/logo.png";
+//import logo from "../../../public/img/logo.png";
+//import logoDark from "../../../public/img/logoDark.png";
 import { useScrollTrigger } from "@mui/material";
 import { Container } from "@mui/system";
+import { ThemeContext } from "../..";
 
 const drawerWidth = 240;
 const navItems = ["La carte", "Le restaurant", "Contact", "News"];
@@ -44,7 +46,16 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img className="logo" src={logo} alt="Logo" />
+      <ThemeContext.Consumer>
+        {({ theme, changeTheme }) => (
+          <img
+            className="logo"
+            src={theme === "light" ? "/img/logo.png" : "/img/logoDark.png"}
+            alt="Logo"
+          />
+        )}
+      </ThemeContext.Consumer>
+
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -65,7 +76,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <ShrinkScroll {...props}>
-        <AppBar color="secondary" enableColorOnDark="true" component="nav">
+        <AppBar color="secondary" enableColorOnDark={true} component="nav">
           <Container maxWidth="lg">
             <Toolbar sx={{ justifyContent: "space-between" }}>
               <IconButton
@@ -77,7 +88,17 @@ function DrawerAppBar(props) {
               >
                 <MenuIcon />
               </IconButton>
-              <img className="logo" src={logo} alt="Logo" />
+              <ThemeContext.Consumer>
+                {({ theme, changeTheme }) => (
+                  <img
+                    className="logo"
+                    src={
+                      theme === "light" ? "/img/logo.png" : "/img/logoDark.png"
+                    }
+                    alt="Logo"
+                  />
+                )}
+              </ThemeContext.Consumer>
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
                 {navItems.map((item) => (
                   <Button key={item} color="inherit">
