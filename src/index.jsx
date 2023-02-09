@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/home/Home";
 import reportWebVitals from "./reportWebVitals";
+import "./i18n";
 
 const DEFAULT_THEME = "light";
 

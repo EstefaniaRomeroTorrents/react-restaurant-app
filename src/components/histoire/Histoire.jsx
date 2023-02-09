@@ -2,12 +2,14 @@ import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import "./Histoire.css";
+import { useTranslation } from "react-i18next";
 function Histoire() {
+  const { t } = useTranslation();
   return (
     <Container maxWidth="lg">
       <Box>
         <Typography variant="h2" align="center">
-          Le Restaurant
+          {t("histoire.title")}
         </Typography>
         <Grid container spacing={2}>
           <Grid item={true} xs={12} sm={6} md={4}>
@@ -16,20 +18,9 @@ function Histoire() {
                 <img src="/img/h-1.png" alt="" />
               </div>
               <Typography variant="h3" align="center">
-                Notre Histoire
+                {t("histoire.histoire.title")}
               </Typography>
-              <p>
-                Crée par Jean Minchelli à la fin des années 60, homme de la mer
-                et ami du Tout Paris en vogue, Le Duc fait partie de la Nouvelle
-                Vague culinaire qui va déferler sur l’Hexagone: rompant avec les
-                dogmes de la cuisine traditionnelle et bourgeoise, le restaurant
-                ose la simplicité du naturel, réduisant quantité de sauces et
-                temps de cuisson pour gagner en saveur et légèreté. C’est ici
-                qu’apparurent les premiers poissons servis crus, du jamais vu
-                alors! Cette cuisine très actuelle assure au « Duc » longévité
-                et modernité. Signé Slavik, le décor d’origine teinté d’embruns
-                ancre le lieu dans un chic intemporel.
-              </p>
+              <p>{t("histoire.histoire.text")}</p>
             </Box>
           </Grid>
 
