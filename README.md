@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Libraries
 
 - [React router](https://reactrouter.com/en/main)
+- [React form](https://react-hook-form.com/)
 
 ## Material UI
 

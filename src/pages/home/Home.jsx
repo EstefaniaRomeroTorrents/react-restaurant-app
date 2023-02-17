@@ -9,6 +9,7 @@ import Carroussel from "../../components/carroussel/Carroussel";
 import Maps from "../../components/maps/Maps";
 import { Container } from "@mui/material";
 import Footer from "../../components/footer/Footer";
+import Contact from "../../components/contact/Contact";
 
 function Home() {
   const itemsB = [
@@ -69,6 +70,7 @@ function Home() {
         <Carroussel items={itemsB} aspectRatio="2.3" />
       </Container>
       <Maps />
+      <Contact />
       <Footer />
     </>
   );
