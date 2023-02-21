@@ -3,16 +3,8 @@ import { Box } from "@mui/system";
 import "./Contact.css";
 import { useForm } from "react-hook-form";
 import * as React from "react";
-import { ErrorMessage } from "@hookform/error-message";
 
-import dayjs from "dayjs";
-import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
-
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 function Contact() {
   const {
@@ -24,11 +16,6 @@ function Contact() {
   });
   const onSubmit = (data) => console.log(data);
   console.log(errors);
-  const [value, setValue] = React.useState(dayjs("2014-08-18T21:11:54"));
-
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <Container maxWidth="lg">
@@ -51,106 +38,183 @@ function Contact() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <Box
               sx={{
-                width: 500,
                 maxWidth: "100%",
+                marginBottom: "10px",
               }}
             >
-              <input
+              <TextField
+                label="Name"
+                variant="outlined"
+                size="small"
+                error={!!errors.name}
+                helperText={errors?.name?.message}
+                color="primary"
                 fullWidth
-                type="text"
-                placeholder="First name"
-                {...register("Firstname", {
-                  required: "Se requiere un nombre.",
-                  maxLength: 80,
-                  /*pattern: {
-                    value: /\d+/,
-                    message: "This input is number only.",
+                sx={{ marginBottom: "10px" }}
+                inputProps={register("name", {
+                  required: {
+                    value: true,
+                    message: "Se requiere un nombre",
                   },
-                  minLength: {
-                    value: 11,
-                    message: "This input must exceed 10 characters",
-                  },*/
-                })}
-              />
-              {errors.Firstname && <p>{errors.Firstname.message}</p>}
-            </Box>
-            <Box>
-              <input
-                type="text"
-                placeholder="Email"
-                {...register("Email", {
-                  required: "Se requiere un Email.",
-                  pattern: {
-                    value: /^\S+@\S+$/i,
-                    message: "Se requiere un EMail correcto.",
+                  maxLength: {
+                    value: 100,
+                    message: "El nombre es demasiado largo",
                   },
                 })}
               />
-              {errors.Email && <p>{errors.Email.message}</p>}
             </Box>
-            <Box>
-              <input
-                type="tel"
-                placeholder="Mobile number"
-                {...register("Mobilenumber", {
-                  required: "Se requiere un número de teléfono.",
-                  minLength: 6,
-                  maxLength: 12,
-                  pattern: {
-                    value: /\d+/,
-                    message: "Se requiere sólo números.",
-                  },
-                })}
-              />
-              {errors.Mobilenumber && <p>{errors.Mobilenumber.message}</p>}
-            </Box>
-            <Box>
-              <input
-                type="number"
-                placeholder="Persons"
-                {...register("persons", {
-                  valueAsNumber: true,
-                  required: "Se requiere un número de personas.",
-                  pattern: {
-                    value: /\d+/,
-                    message: "Se requiere sólo números.",
-                  },
-                })}
-              />
-              {errors.persons && <p>{errors.persons.message}</p>}
-            </Box>
-            <ErrorMessage
-              errors={errors}
-              name="multipleErrorInput"
-              render={({ messages }) => {
-                console.log("messages", messages);
-                return messages
-                  ? Object.entries(messages).map(([type, message]) => (
-                      <p key={type}>{message}</p>
-                    ))
-                  : null;
+            <Box
+              sx={{
+                width: 500,
+
+                maxWidth: "100%",
+                marginBottom: "10px",
               }}
-            />
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <Stack spacing={3}>
-                <DesktopDatePicker
-                  label="Date "
-                  inputFormat="MM/DD/YYYY"
-                  value={value}
-                  onChange={handleChange}
-                  renderInput={(params) => <TextField {...params} />}
-                />
+            >
+              <TextField
+                label="Email"
+                variant="outlined"
+                size="small"
+                error={!!errors.email}
+                helperText={errors?.email?.message}
+                color="primary"
+                fullWidth
+                sx={{ marginBottom: "10px" }}
+                inputProps={register("email", {
+                  required: {
+                    value: true,
+                    message: "Se requiere un email",
+                  },
+                  /* {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Se requiere un nombre",
+                  }*/
+                })}
+              />
+            </Box>
+            <Box
+              sx={{
+                width: 500,
 
-                <TimePicker
-                  label="Time"
-                  value={value}
-                  onChange={handleChange}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </Stack>
-            </LocalizationProvider>
+                maxWidth: "100%",
+                marginBottom: "10px",
+              }}
+            >
+              <TextField
+                label="Number phone"
+                variant="outlined"
+                size="small"
+                error={!!errors.phone}
+                helperText={errors?.phone?.message}
+                color="primary"
+                fullWidth
+                sx={{ marginBottom: "10px" }}
+                inputProps={register("phone", {
+                  required: {
+                    value: true,
+                    message: "Se requiere un número de teléfono",
+                  },
+                  maxLength: {
+                    value: 10,
+                    message: "El nombre es demasiado largo",
+                  },
+                })}
+              />
+            </Box>
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Grid item={true} xs={12} sm={6} md={4}>
+                <Box>
+                  <TextField
+                    label="Persons"
+                    variant="outlined"
+                    size="small"
+                    type={"number"}
+                    error={!!errors.persons}
+                    helperText={errors?.persons?.message}
+                    color="primary"
+                    sx={{ marginBottom: "10px" }}
+                    inputProps={register("persons", {
+                      required: {
+                        value: true,
+                        message: "Campo requerido",
+                      },
+                    })}
+                  />
+                </Box>
+              </Grid>
 
-            <input type="submit" />
+              <Grid item={true} xs={12} sm={6} md={4}>
+                <Box>
+                  <TextField
+                    label=""
+                    variant="outlined"
+                    size="small"
+                    format={"DD/MM/YYYY"}
+                    type={"date"}
+                    error={!!errors.date}
+                    helperText={errors?.date?.message}
+                    color="primary"
+                    fullWidth
+                    sx={{ marginBottom: "10px" }}
+                    inputProps={register("date", {
+                      required: {
+                        value: true,
+                        message: "Campo requerido",
+                      },
+                    })}
+                  />
+                </Box>
+              </Grid>
+              <Grid item={true} xs={12} sm={6} md={4}>
+                <Box>
+                  <TextField
+                    label=""
+                    variant="outlined"
+                    size="small"
+                    type={"time"}
+                    error={!!errors.time}
+                    helperText={errors?.time?.message}
+                    color="primary"
+                    fullWidth
+                    sx={{ marginBottom: "10px" }}
+                    inputProps={register("time", {
+                      required: {
+                        value: true,
+                        message: "Campo requerido",
+                      },
+                    })}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+            <Box
+              sx={{
+                width: 500,
+                maxWidth: "100%",
+                marginBottom: "10px",
+              }}
+            >
+              <TextField
+                label=""
+                variant="outlined"
+                size="small"
+                type={"submit"}
+                color="primary"
+                fullWidth
+                sx={{
+                  marginBottom: "10px",
+                  backgroundColor: "#0a95ff",
+                  borderColor: "#0a95ff",
+                  borderRadius: "3px",
+                }}
+              />
+            </Box>
           </form>
         </Grid>
       </Grid>
