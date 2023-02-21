@@ -8,22 +8,17 @@ function Slider() {
     {
       name: "Random Name #1",
 
-      photo: "http://restaurantleduc.com/wp-content/uploads/2015/03/4.jpg",
+      photo: "/img/b-1.jpg",
     },
     {
       name: "Random Name #2",
 
-      photo: "http://restaurantleduc.com/wp-content/uploads/2015/03/5.jpg",
+      photo: "/img/b-2.jpg",
     },
     {
       name: "Random Name #2",
 
-      photo: "http://restaurantleduc.com/wp-content/uploads/2015/03/6.jpg",
-    },
-    {
-      name: "Random Name #2",
-
-      photo: "http://restaurantleduc.com/wp-content/uploads/2015/03/2.jpg",
+      photo: "/img/b-3.jpg",
     },
   ];
 

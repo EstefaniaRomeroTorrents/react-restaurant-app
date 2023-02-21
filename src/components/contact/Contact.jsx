@@ -14,7 +14,9 @@ function Contact() {
   } = useForm({
     criteriaMode: "all",
   });
+
   const onSubmit = (data) => console.log(data);
+
   console.log(errors);
 
   return (
@@ -35,7 +37,12 @@ function Contact() {
         <Grid item={true} xs={12} sm={6} md={4}>
           <h1>Reservar Mesa</h1>
 
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form
+            form
+            onSubmit={handleSubmit(onSubmit)}
+            action="https://formsubmit.co/7c4897862c5bc8f29c38a5e5342032ba"
+            method="POST"
+          >
             <Box
               sx={{
                 maxWidth: "100%",
@@ -45,6 +52,7 @@ function Contact() {
               <TextField
                 label="Name"
                 variant="outlined"
+                name="email"
                 size="small"
                 error={!!errors.name}
                 helperText={errors?.name?.message}
@@ -74,6 +82,7 @@ function Contact() {
               <TextField
                 label="Email"
                 variant="outlined"
+                name="email"
                 size="small"
                 error={!!errors.email}
                 helperText={errors?.email?.message}
@@ -85,10 +94,10 @@ function Contact() {
                     value: true,
                     message: "Se requiere un email",
                   },
-                  /* {
+                  pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "Se requiere un nombre",
-                  }*/
+                    message: "Se requiere un emal válido",
+                  },
                 })}
               />
             </Box>
@@ -103,6 +112,7 @@ function Contact() {
               <TextField
                 label="Number phone"
                 variant="outlined"
+                name="email"
                 size="small"
                 error={!!errors.phone}
                 helperText={errors?.phone?.message}
@@ -128,11 +138,12 @@ function Contact() {
               justifyContent="center"
               alignItems="center"
             >
-              <Grid item={true} xs={12} sm={6} md={4}>
+              <Grid item={true} xs={4}>
                 <Box>
                   <TextField
                     label="Persons"
                     variant="outlined"
+                    name="email"
                     size="small"
                     type={"number"}
                     error={!!errors.persons}
@@ -149,11 +160,12 @@ function Contact() {
                 </Box>
               </Grid>
 
-              <Grid item={true} xs={12} sm={6} md={4}>
+              <Grid item={true} xs={5}>
                 <Box>
                   <TextField
                     label=""
                     variant="outlined"
+                    name="email"
                     size="small"
                     format={"DD/MM/YYYY"}
                     type={"date"}
@@ -171,11 +183,12 @@ function Contact() {
                   />
                 </Box>
               </Grid>
-              <Grid item={true} xs={12} sm={6} md={4}>
+              <Grid item={true} xs={3}>
                 <Box>
                   <TextField
                     label=""
                     variant="outlined"
+                    name="email"
                     size="small"
                     type={"time"}
                     error={!!errors.time}
@@ -203,6 +216,7 @@ function Contact() {
               <TextField
                 label=""
                 variant="outlined"
+                name="email"
                 size="small"
                 type={"submit"}
                 color="primary"

@@ -38,22 +38,17 @@ function Home() {
     {
       name: "Random Name #1",
 
-      img: "http://restaurantleduc.com/wp-content/uploads/2015/03/4.jpg",
+      img: "/img/b-1.jpg",
     },
     {
       name: "Random Name #2",
 
-      img: "http://restaurantleduc.com/wp-content/uploads/2015/03/5.jpg",
+      img: "/img/b-2.jpg",
     },
     {
       name: "Random Name #2",
 
-      img: "http://restaurantleduc.com/wp-content/uploads/2015/03/6.jpg",
-    },
-    {
-      name: "Random Name #2",
-
-      img: "http://restaurantleduc.com/wp-content/uploads/2015/03/2.jpg",
+      img: "/img/b-3.jpg",
     },
   ];
 
