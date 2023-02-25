@@ -1,0 +1,121 @@
+{
+  "restaurant": {
+    "title": "Restaurant Le Duc",
+    "text1": "Se acabaron las vacaciones, estamos de vuelta !!!!!!!",
+    "text2": "El restaurante está abierto de lunes a sábado para el almuerzo y la cena.",
+    "text3": "Normalmente, tomamos reservas en el 01 43 22 59 59 y 01 43 20 96 30. Los fines de semana y durante el descanso, 06 23 79 32 36 o dominique.minchelli@restaurantleduc.com.",
+    "text4": "También puedes visitar nuestro instagram",
+    "text5": "Restaurante de pescado y marisco desde 1967, Le Duc es una cita gastronómica ineludible para cualquier amante de la buena pesca. Un lugar con carácter situado cerca de los talleres de César y Dalí, cuya carta se va configurando según las llegadas diarias."
+  },
+  "carte": {
+    "title": "La Carta",
+    "menu_de_la_mer": {
+      "title": "Menú del mar",
+      "subtitle": "SERVIDO SOLO EN EL DESAYUNO",
+      "price": "55€",
+      "text1": "Tartar de atún blanco, pepino y cilantro",
+      "text2": "o Sardina en beignet, tomate y menta",
+      "text3": "Rape tibio con hierbas de verano",
+      "text4": "o almejas al ajillo",
+      "text5": "Pastel de chocolate",
+      "text6": "o ensalada de cítricos"
+    },
+    "les_entrees": {
+      "title": "Los entrantes",
+      "section_01": {
+        "title_01": "Pescado",
+        "dishes": [
+          { "name": "Surtido de pescados ahumados tibios", "price": 30 },
+          {
+            "name": "Chuleta templada de rape con aceite de oliva y lima",
+            "price": 30
+          },
+          { "name": "Calamares al natural fritos", "price": 28 },
+          { "name": "Calamares a la plancha con ajo", "price": 28 },
+          { "name": "Atún blanco en aceite de oliva dulce", "price": 30 },
+          { "name": "Sardinas con escabeche", "price": 25 }
+        ]
+      },
+      "section_02": {
+        "title_02": "Mariscos y crustáceos",
+        "dishes": [
+          {
+            "name": "Ostras especiales calientes",
+            "price": 30
+          },
+          {
+            "name": "Ostras especiales n°3 (la docena)",
+            "price": 30
+          },
+          {
+            "name": "Ostras de Belon (1/2 docena)",
+            "price": 28
+          },
+          {
+            "name": "Mejillones",
+            "price": 28
+          },
+          {
+            "name": "Mejillones Fritos De Madrás",
+            "price": 30
+          },
+          {
+            "name": "Almejas salteadas con tomillo",
+            "price": 25
+          },
+          {
+            "name": "Ensalada De Cangrejo Fresco",
+            "price": 28
+          },
+          {
+            "name": "Colas de cigalas con especias dulces",
+            "price": 30
+          },
+          {
+            "name": "Langostinos inflados simples",
+            "price": 25
+          },
+          {
+            "name": "Langostinos con mayonesa",
+            "price": 28
+          }
+        ]
+      },
+      "section_03": {
+        "title_03": "Pescado crudo",
+        "dishes": [
+          { "name": "Tartar de Lubina y Salmón", "price": 28 },
+          { "name": "Salmón en la naturaleza", "price": 28 },
+          { "name": "Chuletas de salmón con dos pimientos", "price": 17 },
+          { "name": "Vieiras crudas", "price": 40 },
+          { "name": "Lubina cruda", "price": 25 }
+        ]
+      }
+    }
+  },
+  "histoire": {
+    "lerestaurant": "EL Restaurante",
+    "historia": "Historia",
+    "texthistoria": "Creado por Jean Minchelli a finales de los años 60, hombre de mar y amigo de todo París en boga, Le Duc formaba parte de la Nueva Ola Culinaria que iba a barrer Francia: rompiendo con los dogmas de la cocina tradicional y burguesa. , el restaurante se atreve con la sencillez natural, reduciendo la cantidad de salsas y el tiempo de cocción para ganar sabor y ligereza. Es aquí donde apareció el primer pescado servido crudo, ¡inédito entonces! Esta cocina muy moderna asegura la longevidad y la modernidad de 'Duke'. Firmado Slavik, la decoración original teñida con espuma de mar ancla el lugar en una elegancia atemporal.",
+    "productos": "Productos",
+    "textproductos": "Desde su creación, calidad y frescura han sido las palabras clave de este establecimiento de alto standing. Pescados, mariscos y crustáceos proceden de las costas francesas, sacados del agua por pequeños pescadores. El menú sigue las mareas y las estaciones, para ofrecer solo las mejores llegadas: la langosta bretona, las ostras de Belon o la lubina se destacan por la sencillez de las preparaciones y la precisión de la cocina. En cuanto a las especias y las hierbas aromáticas, saben revelar la verdadera naturaleza de estos productos únicos, ya sean lujosos como el rodaballo o populares como las sardinas.",
+    "equipo": "El equipo",
+    "textequipo": "Los equipos se suceden en Le Duc pero el espíritu Minchelli sigue ahí. Dominique Minchelli asistido por Pascal Hélard y Senthuran Vignesvaran en la cocina asegura que el espíritu familiar y la modernidad van de la mano. El equipo de sala está presente en la reunión y atiende con la misma atención a todos los clientes, ya sean antiguos habituales o futuros."
+  },
+  "c_restaurante": {
+    "titulo": {
+      "seccion": "Contacto:",
+      "nombre_restaurante": "Restaurant Le Duc"
+    },
+    "texto": {
+      "calle_restaurante": "243 bd Raspail",
+      "codigo_postal": "75014 PARIS",
+      "nombre_restaurante": "Le Duc",
+      "dias": "De lunes a domingo:  ",
+      "telefono_1": "01 43 22 59 59",
+      "horario": "Fuera del horario de apertura:  ",
+      "telefono_3": "06 23 79 32 36",
+      "correo": "dominique.minchelli@restaurantleduc.com"
+    }
+  }
+}

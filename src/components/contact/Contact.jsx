@@ -1,48 +1,111 @@
-import { Container, Grid } from "@mui/material";
+import {
+  Alert,
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  MenuItem,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import "./Contact.css";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import * as React from "react";
-
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
+import moment from "moment";
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
+import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
+import SimpleDialog from "./SimpleDialog";
+import { useTranslation } from "react-i18next";
 
+const people = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 function Contact() {
+  const { t } = useTranslation("reserve");
   const {
     register,
-    handleSubmit,
     formState: { errors },
+    handleSubmit,
+    control,
+    setValue,
+    getValues,
+    clearErrors,
+    reset,
   } = useForm({
-    criteriaMode: "all",
+    defaultValues: {
+      day: moment(), // Si no volem possar cap dia: null
+      time: "",
+    },
   });
 
-  const onSubmit = (data) => console.log(data);
+  const [open, setOpen] = React.useState(false);
+  const [okey, setOkey] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log(errors);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value) => {
+    setOpen(false);
+    setValue("time", value);
+    clearErrors("time");
+  };
+
+  const onSubmit = (value) => {
+    setIsLoading(true);
+    fetch("https://formsubmit.co/ajax/7c4897862c5bc8f29c38a5e5342032ba", {
+      method: "POST",
+      body: JSON.stringify(value),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoading(false);
+          setOkey(
+            "Muchas gracias, en confirmar su reserva le avisaremos por email."
+          );
+          reset(); // Hacer el reset del formulario
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoading(false);
+          setError(
+            "¡Se ha producido un error! Por favor inténtalo de nuevo más tarde."
+          );
+        }
+      );
+  };
 
   console.log(errors);
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ mt: 15 }}>
       <Grid container spacing={2} direction="row" justifyContent="center">
         <Grid item={true} xs={12} sm={6} md={4}>
           <Box>
-            <h1>Horario:</h1>
-            <p>viernes 6:00–16:00, 18:00–24:00</p>
-            <p>sábado 9:00–24:00</p>
-            <p>domingo 9:00–18:00</p>
-            <p>lunes 10:00–16:00</p>
-            <p>martes 10:00–16:00</p>
-            <p>miércoles 10:00–16:00</p>
-            <p>jueves 10:00–16:00, 18:00–24:00</p>
+            <h1>{t("schedule.title")}</h1>
+            <p>{t("schedule.text1")}</p>
+            <p>{t("schedule.text2")}</p>
+            <p>{t("schedule.text3")}</p>
+            <p>{t("schedule.text4")}</p>
+            <p>{t("schedule.text5")}</p>
+            <p>{t("schedule.text6")}</p>
+            <p>{t("schedule.text7")}</p>
           </Box>
         </Grid>
         <Grid item={true} xs={12} sm={6} md={4}>
-          <h1>Reservar Mesa</h1>
+          <h1>{t("reserve.title")}</h1>
 
-          <form
-            form
-            onSubmit={handleSubmit(onSubmit)}
-            action="https://formsubmit.co/7c4897862c5bc8f29c38a5e5342032ba"
-            method="POST"
-          >
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Box
               sx={{
                 maxWidth: "100%",
@@ -50,9 +113,9 @@ function Contact() {
               }}
             >
               <TextField
-                label="Name"
+                label={t("reserve.prenom")}
                 variant="outlined"
-                name="email"
+                name="name"
                 size="small"
                 error={!!errors.name}
                 helperText={errors?.name?.message}
@@ -62,11 +125,11 @@ function Contact() {
                 inputProps={register("name", {
                   required: {
                     value: true,
-                    message: "Se requiere un nombre",
+                    message: "A name is required",
                   },
                   maxLength: {
                     value: 100,
-                    message: "El nombre es demasiado largo",
+                    message: "The name is too long",
                   },
                 })}
               />
@@ -80,7 +143,7 @@ function Contact() {
               }}
             >
               <TextField
-                label="Email"
+                label={t("reserve.email")}
                 variant="outlined"
                 name="email"
                 size="small"
@@ -92,11 +155,11 @@ function Contact() {
                 inputProps={register("email", {
                   required: {
                     value: true,
-                    message: "Se requiere un email",
+                    message: "The name is too long",
                   },
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "Se requiere un emal válido",
+                    message: "A valid email is required",
                   },
                 })}
               />
@@ -110,9 +173,9 @@ function Contact() {
               }}
             >
               <TextField
-                label="Number phone"
+                label={t("reserve.number")}
                 variant="outlined"
-                name="email"
+                name="phone"
                 size="small"
                 error={!!errors.phone}
                 helperText={errors?.phone?.message}
@@ -122,11 +185,15 @@ function Contact() {
                 inputProps={register("phone", {
                   required: {
                     value: true,
-                    message: "Se requiere un número de teléfono",
+                    message: "Phone is required",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "Invalid Phone",
                   },
                   maxLength: {
-                    value: 10,
-                    message: "El nombre es demasiado largo",
+                    value: 12,
+                    message: "Invalid Phone",
                   },
                 })}
               />
@@ -141,71 +208,93 @@ function Contact() {
               <Grid item={true} xs={4}>
                 <Box>
                   <TextField
-                    label="Persons"
-                    variant="outlined"
-                    name="email"
+                    label={t("reserve.people")}
+                    select
+                    fullWidth
                     size="small"
-                    type={"number"}
-                    error={!!errors.persons}
-                    helperText={errors?.persons?.message}
-                    color="primary"
-                    sx={{ marginBottom: "10px" }}
-                    inputProps={register("persons", {
+                    defaultValue=""
+                    error={!!errors.people}
+                    helperText={errors?.people?.message}
+                    inputProps={register("people", {
                       required: {
                         value: true,
-                        message: "Campo requerido",
+                        message: "People required",
                       },
                     })}
-                  />
+                  >
+                    {people.map((x) => (
+                      <MenuItem key={x} value={x}>
+                        {x}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </Box>
               </Grid>
 
               <Grid item={true} xs={5}>
                 <Box>
-                  <TextField
-                    label=""
-                    variant="outlined"
-                    name="email"
-                    size="small"
-                    format={"DD/MM/YYYY"}
-                    type={"date"}
-                    error={!!errors.date}
-                    helperText={errors?.date?.message}
-                    color="primary"
-                    fullWidth
-                    sx={{ marginBottom: "10px" }}
-                    inputProps={register("date", {
-                      required: {
-                        value: true,
-                        message: "Campo requerido",
-                      },
-                    })}
-                  />
+                  <LocalizationProvider dateAdapter={AdapterMoment}>
+                    <Controller
+                      name="day"
+                      control={control}
+                      rules={{
+                        required: {
+                          value: true,
+                          message: "Date required",
+                        },
+                      }}
+                      render={({
+                        field: { onChange, value },
+                        fieldState: { error, invalid },
+                      }) => (
+                        <MobileDatePicker
+                          label="Date"
+                          disablePast
+                          inputFormat="DD-MM-YYYY"
+                          value={value}
+                          onChange={(value) => onChange(moment(value))}
+                          renderInput={(params) => (
+                            <TextField
+                              {...params}
+                              error={!!errors.day}
+                              helperText={errors?.day?.message}
+                              fullWidth
+                              size="small"
+                            />
+                          )}
+                        />
+                      )}
+                    />
+                  </LocalizationProvider>
                 </Box>
               </Grid>
               <Grid item={true} xs={3}>
                 <Box>
                   <TextField
-                    label=""
-                    variant="outlined"
-                    name="email"
+                    fullWidth
+                    value={getValues("time")}
+                    label={t("reserve.hour")}
                     size="small"
-                    type={"time"}
+                    variant="outlined"
+                    onClick={handleClickOpen}
                     error={!!errors.time}
                     helperText={errors?.time?.message}
-                    color="primary"
-                    fullWidth
-                    sx={{ marginBottom: "10px" }}
-                    inputProps={register("time", {
+                    InputProps={register("time", {
                       required: {
                         value: true,
-                        message: "Campo requerido",
+                        message: "Time required",
                       },
                     })}
                   />
                 </Box>
+                <SimpleDialog
+                  selectedValue={getValues("time")}
+                  open={open}
+                  onClose={handleClose}
+                />
               </Grid>
             </Grid>
+
             <Box
               sx={{
                 width: 500,
@@ -213,21 +302,33 @@ function Contact() {
                 marginBottom: "10px",
               }}
             >
-              <TextField
-                label=""
-                variant="outlined"
-                name="email"
-                size="small"
-                type={"submit"}
-                color="primary"
+              <Button
+                variant="contained"
+                type="submit"
                 fullWidth
-                sx={{
-                  marginBottom: "10px",
-                  backgroundColor: "#0a95ff",
-                  borderColor: "#0a95ff",
-                  borderRadius: "3px",
-                }}
-              />
+                size="large"
+                disabled={isLoading}
+                sx={{ marginTop: "8px" }}
+              >
+                {t("reserve.send")}
+                {isLoading && (
+                  <CircularProgress sx={{ marginLeft: "16px" }} size={20} />
+                )}
+              </Button>
+              <div>
+                {okey && (
+                  <Alert sx={{ marginTop: "16px" }} severity="success">
+                    {okey}
+                  </Alert>
+                )}
+              </div>
+              <div>
+                {error && (
+                  <Alert sx={{ marginTop: "16px" }} severity="error">
+                    {error}
+                  </Alert>
+                )}
+              </div>
             </Box>
           </form>
         </Grid>

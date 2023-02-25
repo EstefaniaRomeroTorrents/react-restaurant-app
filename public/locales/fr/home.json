@@ -1,0 +1,121 @@
+{
+  "restaurant": {
+    "title": "Restaurant Le Duc",
+    "text1": "Finies les vacances ,nous sommes de retour !!!!!!!",
+    "text2": "Le restaurant est ouvert du lundi au samedi pour déjeuner et diner.",
+    "text3": "En temps normal, Nous prenons les réservations au 01 43 22 59 59 et au 01 43 20 96 30 .Le week end et pendant la pause , 06 23 79 32 36 ou dominique.minchelli@restaurantleduc.com.",
+    "text4": "Vous pouvez aussi visiter notre instagram",
+    "text5": "Restaurant de poissons et fruits de mer depuis 1967, Le Duc est un rendez vous gastronomique immanquable pour tout amateur de bonne pêche. Un lieu de caractère installé à deux pas des ateliers de César et Dali, dont la carte se dessine suivant les arrivages journaliers."
+  },
+  "carte": {
+    "title": "La Carte",
+    "menu_de_la_mer": {
+      "title": "Menú de la mer",
+      "subtitle": "SERVI SEULEMENT AU DÉJEÛNER",
+      "price": "55€",
+      "text1": "Thon germon en tartare , concombre et coriandre",
+      "text2": "ou Sardine en beignet , tomate et menthe",
+      "text3": "Lotte tiède aux herbes d’été",
+      "text4": "ou palourdes à l’ail",
+      "text5": "Gâteau au chocolat",
+      "text6": "ou salade d’agrumes"
+    },
+    "les_entrees": {
+      "title": "Les entrées",
+      "section_01": {
+        "title_01": "Poissons",
+        "dishes": [
+          { "name": "Assortiment de poissons fumés, tièdes", "price": 30 },
+          {
+            "name": "Escalope de Lotte tiède à l'huile d'olive et citron vert",
+            "price": 30
+          },
+          { "name": "Friture d'Encornets nature", "price": 28 },
+          { "name": "Encornets poêlés à l'ail", "price": 28 },
+          { "name": "Thon blanc à l'huile d'olive douce", "price": 30 },
+          { "name": "Sardines à l'escabèche", "price": 25 }
+        ]
+      },
+      "section_02": {
+        "title_02": "Coquillages & crustacés",
+        "dishes": [
+          {
+            "name": "Les Huîtres spéciales tièdes",
+            "price": 30
+          },
+          {
+            "name": "Les Huîtres spéciales n°3 (la douzaine)",
+            "price": 30
+          },
+          {
+            "name": "Les Huîtres de Belon (la 1/2 douzaine)",
+            "price": 28
+          },
+          {
+            "name": "Moules marinières",
+            "price": 28
+          },
+          {
+            "name": "Moules poêlées Madras",
+            "price": 30
+          },
+          {
+            "name": "Palourdes sautées au thym",
+            "price": 25
+          },
+          {
+            "name": "Salade de Crabe frais",
+            "price": 28
+          },
+          {
+            "name": "Queues de Langoustines aux douces épices",
+            "price": 30
+          },
+          {
+            "name": "Langoustines soufflées nature",
+            "price": 25
+          },
+          {
+            "name": "Langoustines mayonnaise",
+            "price": 28
+          }
+        ]
+      },
+      "section_03": {
+        "title_03": "Poissons crus",
+        "dishes": [
+          { "name": "Tartare de Bar et Saumon", "price": 28 },
+          { "name": "Saumon au nature", "price": 28 },
+          { "name": "Escalopes de Saumon aux deux poivres", "price": 17 },
+          { "name": "Coquilles Saint-Jacques crue", "price": 40 },
+          { "name": "Bar cru", "price": 25 }
+        ]
+      }
+    }
+  },
+  "histoire": {
+    "lerestaurant": "Le Restaurant",
+    "historia": "Histoire",
+    "texthistoria": "Crée par Jean Minchelli à la fin des années 60, homme de la mer et ami du Tout Paris en vogue, Le Duc fait partie de la Nouvelle Vague culinaire qui va déferler sur l’Hexagone: rompant avec les dogmes de la cuisine traditionnelle et bourgeoise, le restaurant ose la simplicité du naturel, réduisant quantité de sauces et temps de cuisson pour gagner en saveur et légèreté. C’est ici qu’apparurent les premiers poissons servis crus, du jamais vu alors! Cette cuisine très actuelle assure au « Duc » longévité et modernité. Signé Slavik, le décor d’origine teinté d’embruns ancre le lieu dans un chic intemporel",
+    "productos": "Nos Produits",
+    "textproductos": "Depuis sa création, qualité et fraicheur sont les maitres mots de cet établissement de haute lignée. Poissons, coquillages et crustacés sont issus des cotes françaises, sortis de l’eau par de petits pêcheurs. La carte suit les marées et les saisons, pour ne livrer que le meilleur des arrivages : homard breton, huitres de Belon ou bar de ligne sont mis en valeur par la simplicité des préparations et la justesse des cuissons. Quant aux épices et aux herbes aromatiques, elles savent révéler la vraie nature de ces produits uniques, qu’ils soient luxueux comme le turbot ou populaires comme la sardine.",
+    "equipo": "L'equipe",
+    "textequipo": "Les équipes se succèdent chez Le Duc mais l'esprit Minchelli est toujours là. Dominique Minchelli secondé par Pascal Hélard et Senthuran Vignesvaran en cuisine fait en sorte que esprit de famille et modernité aillent de pair . L'équipe de salle est présente au rendez vous et s'occupe de tous les clients avec la même attention , que ce soit de vieux habitués ou des futurs"
+  },
+  "c_restaurante": {
+    "titulo": {
+      "seccion": "Contact:",
+      "nombre_restaurante": "Restaurant Le Duc"
+    },
+    "texto": {
+      "calle_restaurante": "243 bd Raspail",
+      "codigo_postal": "75014 PARIS",
+      "nombre_restaurante": "Le Duc",
+      "dias": "Du lundi au dimanche:  ",
+      "telefono_1": "01 43 22 59 59",
+      "horario": "En dehors des heures d'ouverture:  ",
+      "telefono_3": "06 23 79 32 36",
+      "correo": "dominique.minchelli@restaurantleduc.com"
+    }
+  }
+}

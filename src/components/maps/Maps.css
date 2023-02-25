@@ -1,0 +1,10 @@
+.info {
+  margin-left: 15%;
+  padding-top: 30px;
+  padding: 30px;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+  /*background-color: white;*/
+  top: 20px;
+}

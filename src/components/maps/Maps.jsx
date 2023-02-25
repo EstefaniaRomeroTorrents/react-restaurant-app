@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
+import Contacter from "./Contacter";
 import "./Maps.css";
 
 function Maps() {
@@ -17,6 +18,7 @@ function Maps() {
             referrerPolicy="no-referrer-when-downgrade"
             title="mapa"
           ></iframe>
+          <Contacter />
         </Grid>
       </Grid>
     </Box>

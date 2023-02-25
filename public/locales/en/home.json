@@ -1,0 +1,121 @@
+{
+  "restaurant": {
+    "title": "Restaurant Le Duc",
+    "text1": "The holidays are over, we are back !!!!!!!",
+    "text2": "The restaurant is open from Monday to Saturday for lunch and dinner.",
+    "text3": "Normally, we take reservations at 01 43 22 59 59 and 01 43 20 96 30. On weekends and during the break, 06 23 79 32 36 or dominique.minchelli@restaurantleduc.com.",
+    "text4": "You can also visit our instagram",
+    "text5": "A fish and seafood restaurant since 1967, Le Duc is an unmissable gastronomic event for any lover of good fishing. A place with character located near the César and Dalí workshops, whose menu is configured according to daily arrivals."
+  },
+  "carte": {
+    "title": "The Menu",
+    "menu_de_la_mer": {
+      "title": "Sea ​​menu",
+      "subtitle": "SERVED ONLY AT BREAKFAST",
+      "price": "55€",
+      "text1": "White tuna tartare, cucumber and coriander",
+      "text2": "or Sardine in beignet, tomato and mint",
+      "text3": "Warm monkfish with summer herbs",
+      "text4": "or garlic clams",
+      "text5": "Chocolate cake",
+      "text6": "or citrus salad"
+    },
+    "les_entrees": {
+      "title": "The Starters",
+      "section_01": {
+        "title_01": "Fish",
+        "dishes": [
+          { "name": "Assortment of warm smoked fish", "price": 30 },
+          {
+            "name": "Warm monkfish chop with olive oil and lime",
+            "price": 30
+          },
+          { "name": "Fried natural squid", "price": 28 },
+          { "name": "Grilled squid with garlic", "price": 28 },
+          { "name": "White tuna in sweet olive oil", "price": 30 },
+          { "name": "Pickled sardines", "price": 25 }
+        ]
+      },
+      "section_02": {
+        "title_02": "Shellfish and crustaceans",
+        "dishes": [
+          {
+            "name": "Hot special oysters",
+            "price": 30
+          },
+          {
+            "name": "Special oysters n°3 (the dozen)",
+            "price": 30
+          },
+          {
+            "name": "Belon oysters (1/2 dozen)",
+            "price": 28
+          },
+          {
+            "name": "Mussels",
+            "price": 28
+          },
+          {
+            "name": "Madras Fried Mussels",
+            "price": 30
+          },
+          {
+            "name": "Sautéed clams with thyme",
+            "price": 25
+          },
+          {
+            "name": "Fresh Crab Salad",
+            "price": 28
+          },
+          {
+            "name": "Crayfish tails with sweet spices",
+            "price": 30
+          },
+          {
+            "name": "Simple puffed prawns",
+            "price": 25
+          },
+          {
+            "name": "Prawns with mayonnaise",
+            "price": 28
+          }
+        ]
+      },
+      "section_03": {
+        "title_03": "Raw Fish",
+        "dishes": [
+          { "name": "Sea Bass and Salmon Tartare", "price": 28 },
+          { "name": "Salmon in the wild", "price": 28 },
+          { "name": "Salmon chops with two peppers", "price": 17 },
+          { "name": "Raw scallops", "price": 40 },
+          { "name": "Raw sea bass", "price": 25 }
+        ]
+      }
+    }
+  },
+  "histoire": {
+    "lerestaurant": "The Restaurant",
+    "historia": "History",
+    "texthistoria": "Created by Jean Minchelli at the end of the 1960s, a man of the sea and a friend of all of Paris in vogue, Le Duc was part of the New Culinary Wave that was to sweep France: breaking with the dogmas of traditional and bourgeois cuisine. , the restaurant dares with natural simplicity, reducing the number of sauces and cooking time to gain flavor and lightness. It is here that the first fish served raw appeared, unprecedented then! This very modern kitchen ensures the longevity and modernity of 'Duke'. Signed Slavik, the original decoration tinged with sea foam anchors the place in timeless elegance.",
+    "productos": "Products",
+    "textproductos": "Since its creation, quality and freshness have been the keywords of this high standing establishment. Fish, shellfish and crustaceans come from the French coast, taken out of the water by small fishermen. The menu follows the tides and the seasons, to offer only the best arrivals: Breton lobster, Belon oysters or sea bass stand out for the simplicity of the preparations and the precision of the kitchen. As for spices and aromatic herbs, they know how to reveal the true nature of these unique products, whether they are luxurious like turbot or popular like sardines.",
+    "equipo": "The team",
+    "textequipo": "Teams follow one another at Le Duc but the Minchelli spirit is still there. Dominique Minchelli assisted by Pascal Hélard and Senthuran Vignesvaran in the kitchen ensures that the family spirit and modernity go hand in hand. The room team is present at the meeting and attends all customers with the same attention, whether they are regulars or future ones."
+  },
+  "c_restaurante": {
+    "titulo": {
+      "seccion": "Contact:",
+      "nombre_restaurante": "Restaurant Le Duc"
+    },
+    "texto": {
+      "calle_restaurante": "243 bd Raspail",
+      "codigo_postal": "75014 PARIS",
+      "nombre_restaurante": "Le Duc",
+      "dias": "From Mondays to Sundays:  ",
+      "telefono_1": "01 43 22 59 59",
+      "horario": "Outside opening hours:  ",
+      "telefono_3": "06 23 79 32 36",
+      "correo": "dominique.minchelli@restaurantleduc.com"
+    }
+  }
+}

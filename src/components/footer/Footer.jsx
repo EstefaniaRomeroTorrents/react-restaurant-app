@@ -1,13 +1,12 @@
 import { Box } from "@mui/system";
 import Button from "@mui/material/Button";
-
 import "./Footer.css";
 import { Grid } from "@mui/material";
 import { ThemeContext } from "../..";
 import { useTranslation } from "react-i18next";
 
 function Footer() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation("common");
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -22,15 +21,53 @@ function Footer() {
           lg={5}
           paddingBottom="30px"
           paddingTop="30px"
+          marginLeft="20px"
+          display="flex"
         >
           <ThemeContext.Consumer>
-            {({ theme, changeTheme }) => (
-              <Button onClick={changeTheme}>{theme}</Button>
+            {({ theme, toggleTheme }) => (
+              <Button
+                onClick={toggleTheme}
+                variant="contained"
+                sx={{
+                  borderColor: "primary.main",
+                  marginRight: "10px",
+                }}
+              >
+                {t("footer.mode")} {theme}
+              </Button>
             )}
           </ThemeContext.Consumer>
-          <Button onClick={() => changeLanguage("en")}>En</Button>
-          <Button onClick={() => changeLanguage("es")}>Es</Button>
-          <Button onClick={() => changeLanguage("fr")}>Fr</Button>
+          <Button
+            onClick={() => changeLanguage("en")}
+            sx={{
+              borderColor: "primary.main",
+              marginRight: "10px",
+            }}
+            variant="contained"
+          >
+            En
+          </Button>
+          <Button
+            onClick={() => changeLanguage("es")}
+            variant="contained"
+            sx={{
+              borderColor: "primary.main",
+              marginRight: "10px",
+            }}
+          >
+            Es
+          </Button>
+          <Button
+            onClick={() => changeLanguage("fr")}
+            variant="contained"
+            sx={{
+              borderColor: "primary.main",
+              marginRight: "10px",
+            }}
+          >
+            Fr
+          </Button>
         </Grid>
       </Grid>
     </Box>

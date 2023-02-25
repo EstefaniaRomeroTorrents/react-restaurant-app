@@ -1,0 +1,13 @@
+{
+  "appbar": {
+    "home": "Home",
+    "carte": "LA CARTE",
+    "restaurant": "LE RESTAURANT",
+    "histoire": "HISTOIRE",
+    "reserve": "RESERVE",
+    "contact": "Contact"
+  },
+  "footer": {
+    "mode": "MODE"
+  }
+}

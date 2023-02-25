@@ -1,0 +1,21 @@
+{
+  "schedule": {
+    "title": "Horaire",
+    "text1": "Vendredi 12:00h–16:00h, 18:00h–24:00h",
+    "text2": "Samedi 12:00h–24:00h.",
+    "text3": "Dimanche 12:00h–18:00h",
+    "text4": "Lundi 12:00h–16:00h",
+    "text5": "Mardi 12:00h–16:00h",
+    "text6": "Mercredi - Cerrado",
+    "text7": "Jeudi 12:00h–16:00h, 18:00h–24:00h"
+  },
+  "reserve": {
+    "title": "Réserver une table",
+    "prenom": "Prénom",
+    "email": "Email",
+    "number": "Numéro de téléphone",
+    "people": "Personnes",
+    "hour": "Heure",
+    "send": "Envoyer"
+  }
+}

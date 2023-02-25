@@ -1,0 +1,21 @@
+{
+  "schedule": {
+    "title": "Hour",
+    "text1": "Friday 12:00h–16:00h, 18:00h–24:00h",
+    "text2": "Saturday 12:00h–24:00h.",
+    "text3": "Sunday 12:00h–18:00h",
+    "text4": "Monday 12:00h–16:00h",
+    "text5": "Tuesday 12:00h–16:00h",
+    "text6": "Wednesday - Cerrado",
+    "text7": "Thursday 12:00h–16:00h, 18:00h–24:00h"
+  },
+  "reserve": {
+    "title": "Reserve",
+    "prenom": "Name",
+    "email": "Email",
+    "number": "Phone number",
+    "people": "Persons",
+    "hour": "Hour",
+    "send": "Send"
+  }
+}

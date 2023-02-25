@@ -1,9 +1,9 @@
 import { Grid, Typography } from "@mui/material";
 import { Container, Box } from "@mui/system";
-
-import EuroOutlinedIcon from "@mui/icons-material/EuroOutlined";
+import { useTranslation } from "react-i18next";
 import "./Carte.css";
 function Carte() {
+  const { t } = useTranslation("home");
   return (
     <Box
       sx={{ background: "#f8e8d6", position: "relative", overflow: "hidden" }}
@@ -18,10 +18,10 @@ function Carte() {
         <img className="fish-7" src="/img/p-7.png" alt="" />
         <img className="fish-8" src="/img/p-8.png" alt="" />
       </Box>
-      <Container className="home-carte">
+      <Container className="home-carte" id="carta">
         <Box className="fish-carte">
           <Typography variant="h2" align="center">
-            La Carte
+            {t("carte.title")}
           </Typography>
           <Grid container direction="row" justifyContent="center">
             <Grid
@@ -38,24 +38,29 @@ function Carte() {
                   backgroundColor: "secondary.main",
                 }}
               >
-                <Typography variant="h3">Menú de la Mer</Typography>
+                <Typography variant="h3">
+                  {t("carte.menu_de_la_mer.title")}
+                </Typography>
                 <Typography variant="h5" className="menuh5">
-                  SERVI SEULEMENT AU DÉJEÛNER
+                  {t("carte.menu_de_la_mer.subtitle")}
                 </Typography>
                 <Typography variant="h6">
-                  55 <EuroOutlinedIcon />
+                  {t("carte.menu_de_la_mer.price")}
                 </Typography>
                 <Grid item={true} xs={10} md={8} lg={12}>
                   <div className="pMenu">
                     <p>
-                      Thon germon en tartare , concombre et coriandre <br />
-                      ou Sardine en beignet , tomate et menthe
+                      {t("carte.menu_de_la_mer.text1")}
+                      <br />
+                      {t("carte.menu_de_la_mer.text2")}
                     </p>
                     <p>
-                      Lotte tiède aux herbes d’été <br /> ou palourdes à l’ail
+                      {t("carte.menu_de_la_mer.text3")} <br />{" "}
+                      {t("carte.menu_de_la_mer.text4")}
                     </p>
                     <p>
-                      Gâteau au chocolat <br /> ou salade d’agrumes
+                      {t("carte.menu_de_la_mer.text5")} <br />{" "}
+                      {t("carte.menu_de_la_mer.text6")}
                     </p>
                   </div>
                 </Grid>
@@ -77,22 +82,20 @@ function Carte() {
                   backgroundColor: "secondary.main",
                 }}
               >
-                <Typography variant="h6">Poissons crus</Typography>
+                <Typography variant="h6">
+                  {t("carte.les_entrees.section_03.title_03")}
+                </Typography>
 
                 <Grid item={true} xs={10} md={8} lg={12}>
                   <div className="pMenu">
-                    <p>
-                      Tartare de Bar et <br /> Saumon 20€
-                    </p>
-                    <p>Saumon au naturel 25€</p>
-                    <p>
-                      Escalopes de Saumon <br /> aux deux poivres 17€
-                    </p>
-                    <p>
-                      Coquilles Saint- <br />
-                      Jacques crues 40€
-                    </p>
-                    <p>Bar cru 25€</p>
+                    {t("carte.les_entrees.section_03.dishes", {
+                      returnObjects: true,
+                    }).map((value, index) => (
+                      <tr key={index}>
+                        <td>{value.name}</td>
+                        <td className="price">{value.price}€</td>
+                      </tr>
+                    ))}
                   </div>
                 </Grid>
               </Box>
@@ -104,35 +107,38 @@ function Carte() {
                   backgroundColor: "secondary.main",
                 }}
               >
-                <Typography variant="h2">Les entrées</Typography>
-                <Typography variant="h6">Poissons</Typography>
+                <Typography variant="h2">
+                  {t("carte.les_entrees.title")}
+                </Typography>
+                <Typography variant="h6">
+                  {t("carte.les_entrees.section_01.title_01")}
+                </Typography>
 
                 <Grid item={true} xs={10} md={8} lg={12}>
                   <div className="pMenu">
-                    <p>Assortiment de poissons fumés, tièdes 30€</p>
-                    <p>
-                      Escalope de Lotte tiède à l'huile d'olive et citron vert
-                      30€
-                    </p>
-                    <p>Friture d'Encornets nature 28€</p>
-                    <p>Encornets poêlés à l'ail 28€</p>
-                    <p>Thon blanc à l'huile d'olive douce 30€</p>
-                    <p>Sardines à l'escabèche 25€</p>
+                    {t("carte.les_entrees.section_01.dishes", {
+                      returnObjects: true,
+                    }).map((value, index) => (
+                      <tr key={index}>
+                        <td>{value.name}</td>
+                        <td className="price">{value.price}€</td>
+                      </tr>
+                    ))}
                   </div>
                 </Grid>
-                <Typography variant="h6">Coquillages & crustacés</Typography>
+                <Typography variant="h6">
+                  {t("carte.les_entrees.section_02.title_02")}
+                </Typography>
                 <Grid item={true} xs={10} md={8} lg={12}>
                   <div className="pMenu">
-                    <p>Les Huîtres spéciales tièdes 40€</p>
-                    <p>Les Huîtres spéciales n°3 (la douzaine) 48€</p>
-                    <p>Les Huîtres de Belon (la 1/2 douzaine) 60€</p>
-                    <p>Moules marinières 25€</p>
-                    <p>Moules poêlées Madras 25€</p>
-                    <p>Palourdes sautées au thym 35€</p>
-                    <p>Salade de Crabe frais 40€</p>
-                    <p>Queues de Langoustines aux douces épices 60€</p>
-                    <p>Langoustines soufflées nature 60€</p>
-                    <p>Langoustines mayonnaise 60€</p>
+                    {t("carte.les_entrees.section_02.dishes", {
+                      returnObjects: true,
+                    }).map((value, index) => (
+                      <tr key={index}>
+                        <td>{value.name}</td>
+                        <td className="price">{value.price}€</td>
+                      </tr>
+                    ))}
                   </div>
                 </Grid>
               </Box>
